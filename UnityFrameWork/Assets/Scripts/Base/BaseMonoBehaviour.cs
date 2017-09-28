@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BaseMonoBehaviour : MonoBehaviour 
+public class BaseMonoBehaviour : MonoBehaviour ,IOnInitUI
 {
     public GameObject CacheGameObject = null;
     public Transform CacheTransform = null;
@@ -11,10 +11,10 @@ public class BaseMonoBehaviour : MonoBehaviour
     {
         CacheGameObject = this.gameObject;
         CacheTransform = this.transform;
-        OnAwake();
+        OnInitUI();
     }
-    
-    public virtual void OnAwake()
+
+    public virtual void OnInitUI()
     {
 
     }

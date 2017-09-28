@@ -6,11 +6,7 @@ using UnityEngine;
 public class Singleton<T> where T : class,new()
 {
     private static T instance = null;
-    private static readonly object Lock =new object();
-    private Singleton()
-    {
-        OnInitialized();
-    }
+    private static readonly object Lock = new object();
     public static T Instance
     {
         get
@@ -25,7 +21,7 @@ public class Singleton<T> where T : class,new()
             }
         }
     }
-    protected virtual void OnInitialized()
+    public virtual void OnInitialized()
     {
 
     }

@@ -5,7 +5,7 @@ using UnityEngine;
 public class ModelMgr : Singleton<ModelMgr>
 {
     private Dictionary<string, BaseModel> models = null;
-    protected override void OnInitialized()
+    public override void OnInitialized()
     {
         base.OnInitialized();
         models = new Dictionary<string, BaseModel>();
