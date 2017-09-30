@@ -91,6 +91,8 @@
     <Compile Include="Assets\GameEngine\GameModel\BaseModel.cs" />
     <Compile Include="Assets\GameEngine\GameModel\ModelMgr.cs" />
     <Compile Include="Assets\GameEngine\Singleton\Singleton.cs" />
+    <Compile Include="Assets\GameEngineEditor\AssetsPostProcessor.cs" />
+    <Compile Include="Assets\GameEngineEditor\GameComplied.cs" />
     <Compile Include="Assets\NGUI\Examples\Scripts\InventorySystem\Game\EquipItems.cs" />
     <Compile Include="Assets\NGUI\Examples\Scripts\InventorySystem\Game\EquipRandomItem.cs" />
     <Compile Include="Assets\NGUI\Examples\Scripts\InventorySystem\Game\UICursor.cs" />
