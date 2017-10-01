@@ -20,4 +20,8 @@ public static class Transform_Expressions
         }
         return t.Find(path).GetComponentsInChildren<T>();
     }
+    public static T AddCompontent<T>(this Transform t) where T : MonoBehaviour
+    {
+        return t.gameObject.AddComponent<T>();
+    }
 }

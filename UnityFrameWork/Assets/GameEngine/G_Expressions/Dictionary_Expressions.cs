@@ -8,9 +8,9 @@ public static class Dictionary_Expressions
     {
         return dictionary == null || dictionary.Count == 0;
     }
-    public static T TryGetValue<T, T1>(this Dictionary<T1, T> dictionary, T1 key)
+    public static T1 TryGetValue<T, T1>(this Dictionary<T, T1> dictionary, T key)
     {
-        T t = default(T);
+        T1 t = default(T1);
         if (dictionary.ContainsKey(key))
         {
             if (dictionary.TryGetValue(key, out t))

@@ -8,4 +8,8 @@ public static class CSharp_Expressions
     {
         return o == null;
     }
+    public static bool IsNonNull(this object o)
+    {
+        return o != null;
+    }
 }

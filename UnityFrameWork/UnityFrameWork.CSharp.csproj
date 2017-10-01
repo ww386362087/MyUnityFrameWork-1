@@ -79,8 +79,19 @@
     <Reference Include="UnityEditor.iOS.Extensions.Common">
       <HintPath>Library\UnityAssemblies\UnityEditor.iOS.Extensions.Common.dll</HintPath>
     </Reference>
+    <Reference Include="Excel">
+      <HintPath>Assets\Plugins\Excel\Excel.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSharpCode.SharpZipLib">
+      <HintPath>Assets\Plugins\Excel\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data">
+      <HintPath>Assets\Plugins\Excel\System.Data.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\GameEngine\Excel\DialogItem.cs" />
+    <Compile Include="Assets\GameEngine\Excel\DialogTools.cs" />
     <Compile Include="Assets\GameEngine\G_Expressions\CSharp_Expressions.cs" />
     <Compile Include="Assets\GameEngine\G_Expressions\Dictionary_Expressions.cs" />
     <Compile Include="Assets\GameEngine\G_Expressions\Int32_Expressions.cs" />
@@ -90,6 +101,7 @@
     <Compile Include="Assets\GameEngine\G_Expressions\Transform_Expressions.cs" />
     <Compile Include="Assets\GameEngine\GameModel\BaseModel.cs" />
     <Compile Include="Assets\GameEngine\GameModel\ModelMgr.cs" />
+    <Compile Include="Assets\GameEngine\Singleton\MonoSingleton.cs" />
     <Compile Include="Assets\GameEngine\Singleton\Singleton.cs" />
     <Compile Include="Assets\GameEngineEditor\AssetsPostProcessor.cs" />
     <Compile Include="Assets\GameEngineEditor\GameComplied.cs" />

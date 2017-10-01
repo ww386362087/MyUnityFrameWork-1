@@ -2,20 +2,24 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
-[InitializeOnLoad()]
-public class GameComplied
+namespace Assets.GameEngineEditor
 {
-    static GameComplied()
+    [InitializeOnLoad()]
+    public class GameComplied
     {
-        EditorApplication.update += delegate()
+        static GameComplied()
         {
-            if (EditorApplication.isCompiling)
+            EditorApplication.update += delegate()
             {
-                if (EditorApplication.isPlaying)
+                if (EditorApplication.isCompiling)
                 {
-                    EditorApplication.isPlaying = false;
+                    if (EditorApplication.isPlaying)
+                    {
+                        EditorApplication.isPlaying = false;
+                    }
                 }
-            }
-        };
+            };
+        }
     }
 }
+
