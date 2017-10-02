@@ -8,4 +8,8 @@ public static class List_Expressions
     {
         return list == null || list.Count == 0;
     }
+    public static bool IsNonNullOrEmpty<T>(this List<T> list)
+    {
+        return list != null && list.Count > 0;
+    }
 }
