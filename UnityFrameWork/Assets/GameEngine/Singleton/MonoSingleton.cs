@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class MonoSingleton<T> : MonoBehaviour where T : class,new()
 {
+    protected Transform CacheTransform = null;
+    protected GameObject CacheGameObject = null;
     private static T instance = null;
     public static readonly object Lock = new object();
     public static T Instance { get { return instance; } }
@@ -14,7 +16,8 @@ public class MonoSingleton<T> : MonoBehaviour where T : class,new()
     }
     public virtual void OnInitialized()
     {
-
+        CacheGameObject = this.gameObject;
+        CacheTransform = this.transform;
     }
     public void OnApplicationQuit()
     {

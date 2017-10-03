@@ -6,6 +6,10 @@ public static class String_Expressions
 {
     public static bool IsNullOrEmpty(this string s)
     {
-        return IsNullOrEmpty(s);
+        return string.IsNullOrEmpty(s);
+    }
+    public static bool IsNonNullOrEmpty(this string s)
+    {
+        return !(string.IsNullOrEmpty(s));
     }
 }

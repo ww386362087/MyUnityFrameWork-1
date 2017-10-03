@@ -94,6 +94,7 @@
     <Compile Include="Assets\GameEngine\Excel\DialogTools.cs" />
     <Compile Include="Assets\GameEngine\G_Expressions\CSharp_Expressions.cs" />
     <Compile Include="Assets\GameEngine\G_Expressions\Dictionary_Expressions.cs" />
+    <Compile Include="Assets\GameEngine\G_Expressions\GameObject_Expressions.cs" />
     <Compile Include="Assets\GameEngine\G_Expressions\Int32_Expressions.cs" />
     <Compile Include="Assets\GameEngine\G_Expressions\List_Expressions.cs" />
     <Compile Include="Assets\GameEngine\G_Expressions\Queue_Expressions.cs" />
@@ -104,6 +105,9 @@
     <Compile Include="Assets\GameEngine\Singleton\MonoSingleton.cs" />
     <Compile Include="Assets\GameEngine\Singleton\Singleton.cs" />
     <Compile Include="Assets\GameEngine\Timer\TimerMgr.cs" />
+    <Compile Include="Assets\GameEngine\UI\AppBasePages.cs" />
+    <Compile Include="Assets\GameEngine\UI\AppBootStrap.cs" />
+    <Compile Include="Assets\GameEngine\UI\AppConst.cs" />
     <Compile Include="Assets\GameEngineEditor\AssetsPostProcessor.cs" />
     <Compile Include="Assets\GameEngineEditor\GameComplied.cs" />
     <Compile Include="Assets\NGUI\Examples\Scripts\InventorySystem\Game\EquipItems.cs" />
@@ -247,6 +251,8 @@
     <Compile Include="Assets\Scripts\Base\BaseMonoBehaviour.cs" />
     <Compile Include="Assets\Scripts\Base\IOnFormUI.cs" />
     <Compile Include="Assets\Scripts\Base\IOnInitUI.cs" />
+    <Compile Include="Assets\Scripts\UI\UILoadingPage\UILoadingPage.cs" />
+    <Compile Include="Assets\Scripts\UI\UILoginPage\UILoginPage.cs" />
     <Compile Include="Assets\test.cs" />
   </ItemGroup>
   <ItemGroup>

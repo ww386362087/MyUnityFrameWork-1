@@ -8,6 +8,10 @@ public static class Dictionary_Expressions
     {
         return dictionary == null || dictionary.Count == 0;
     }
+    public static bool IsNonNullOrEmpty<T1, T2>(this Dictionary<T1, T2> dictionary)
+    {
+        return dictionary != null && dictionary.Count > 0;
+    }
     public static T1 TryGetValue<T, T1>(this Dictionary<T, T1> dictionary, T key)
     {
         T1 t = default(T1);
