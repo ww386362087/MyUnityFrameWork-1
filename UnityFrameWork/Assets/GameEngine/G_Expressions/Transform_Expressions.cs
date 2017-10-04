@@ -20,7 +20,7 @@ public static class Transform_Expressions
         }
         return t.Find(path).GetComponentsInChildren<T>();
     }
-    public static T[] TryGetChildComponent<T>(this Transform t,bool includeInactive, string path = null) where T : MonoBehaviour
+    public static T[] TryGetChildComponent<T>(this Transform t, bool includeInactive, string path = null) where T : MonoBehaviour
     {
         if (path == null || path.Length == 0)
         {
@@ -41,5 +41,9 @@ public static class Transform_Expressions
         t.transform.localPosition = Vector3.zero;
         t.transform.localRotation = Quaternion.Euler(Vector3.zero);
         t.transform.localScale = Vector3.one;
+    }
+    public static T AddChild<T>(this Transform t) where T : Component
+    {
+        return t.gameObject.AddChild<T>();
     }
 }

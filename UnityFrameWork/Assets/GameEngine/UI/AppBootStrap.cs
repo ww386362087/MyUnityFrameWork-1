@@ -13,7 +13,12 @@ namespace Assets.GameEngine
         private void Init()
         {
             InitializedUIRoot();
+            CacheComonpent();
             AppBasePages.ShowPage<UILoginPage>();
+        }
+        private void CacheComonpent()
+        {
+            CacheTransform.AddChild<EventHandler>();
         }
         private void InitializedUIRoot()
         {

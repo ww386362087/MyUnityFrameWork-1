@@ -102,6 +102,8 @@
     <Compile Include="Assets\GameEngine\G_Expressions\Transform_Expressions.cs" />
     <Compile Include="Assets\GameEngine\GameModel\BaseModel.cs" />
     <Compile Include="Assets\GameEngine\GameModel\ModelMgr.cs" />
+    <Compile Include="Assets\GameEngine\MessageHandler\BaseEvent.cs" />
+    <Compile Include="Assets\GameEngine\MessageHandler\EventHandler.cs" />
     <Compile Include="Assets\GameEngine\Singleton\MonoSingleton.cs" />
     <Compile Include="Assets\GameEngine\Singleton\Singleton.cs" />
     <Compile Include="Assets\GameEngine\Timer\TimerMgr.cs" />
