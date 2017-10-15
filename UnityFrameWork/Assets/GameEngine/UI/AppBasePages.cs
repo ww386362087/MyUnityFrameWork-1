@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+
 namespace Assets.GameEngine
 {
     public enum UIType
@@ -9,20 +10,26 @@ namespace Assets.GameEngine
         Normal = 0,
         PopUp
     }
+
     public enum UIMode
     {
         NeedBack = 0,
         HideOther,
     }
+
     public class AppBasePages : IOnFormUI
     {
-        protected AppBasePages() { }
+        protected AppBasePages()
+        {
+        }
+
         protected AppBasePages(UIType type, UIMode mode, string path = "")
         {
             this.type = type;
             this.mode = mode;
             this.path = path;
         }
+
         public void Show()
         {
             if (this.CacheGameObject == null && this.path.IsNonNullOrEmpty())
@@ -45,6 +52,7 @@ namespace Assets.GameEngine
             panels[0].depth = UIDeep;
             UIDeep += 1;
         }
+
         private Transform SetUIParent()
         {
             switch (type)
@@ -54,28 +62,37 @@ namespace Assets.GameEngine
             }
             return null;
         }
+
         private void CreateUI()
         {
             this.CacheGameObject = GameObject.Instantiate(Resources.Load(path), SetUIParent()) as GameObject;
             this.CacheTransform = this.CacheGameObject.transform;
             OnInitUI();
         }
+
         public void Close()
         {
             CacheGameObject.SetActiveSafe(false);
             content = null;
             OnExit();
         }
+
         public virtual void OnEnter()
-        {
-            CacheGameObject.SetVisible(true);
-        }
-        public virtual void OnRefresh()
         {
             CacheGameObject.SetActiveSafe(true);
         }
-        public virtual void OnExit() { }
-        public virtual void OnInitUI() { }
+
+        public virtual void OnRefresh()
+        {
+        }
+
+        public virtual void OnExit()
+        {
+        }
+
+        public virtual void OnInitUI()
+        {
+        }
 
         private UIType type;
         private UIMode mode;
@@ -84,6 +101,7 @@ namespace Assets.GameEngine
         protected GameObject CacheGameObject;
         protected Transform CacheTransform;
         public bool IsClearBackSequence { get { return mode == UIMode.HideOther; } }
+
         public static void CheakPageNodes(AppBasePages pages)
         {
             if (ShownPages.IsNull()) { ShownPages = new Dictionary<string, AppBasePages>(); }
@@ -109,6 +127,7 @@ namespace Assets.GameEngine
             }
             ShownPages.Add(pages.CacheGameObject.name, pages);
         }
+
         public static void ShowPage<T>() where T : AppBasePages, new()
         {
             string name = typeof(T).Name;
@@ -122,6 +141,7 @@ namespace Assets.GameEngine
                 ShowPage(name, t, null, null);
             }
         }
+
         public static void ShowPage(string name, AppBasePages pages, object content, Action callback = null)
         {
             if (AllPages.IsNull()) { AllPages = new Dictionary<string, AppBasePages>(); }
@@ -133,6 +153,7 @@ namespace Assets.GameEngine
             page = AllPages[name];
             page.Show();
         }
+
         public static void ClosePage(string name, AppBasePages pages, Action callback = null)
         {
             if (ShownPages.IsNonNullOrEmpty() && pages.IsNonNull() && pages.CacheGameObject.IsNonNull())
@@ -144,6 +165,7 @@ namespace Assets.GameEngine
                 }
             }
         }
+
         public static void ClosePage<T>()
         {
             string name = typeof(T).Name;
@@ -152,7 +174,8 @@ namespace Assets.GameEngine
                 ClosePage(name, AllPages[name], null);
             }
         }
-        public static int UIDeep { get; set; }
+
+        private static int UIDeep = 5;
         public static Dictionary<string, AppBasePages> AllPages { get; set; }
         public static Dictionary<string, AppBasePages> ShownPages { get; set; }
     }
