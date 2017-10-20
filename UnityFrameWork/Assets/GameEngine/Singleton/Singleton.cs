@@ -3,14 +3,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Singleton<T> where T : class,new()
+public class Singleton<T> where T : class, new()
 {
     public Singleton()
     {
         OnInitialized();
     }
+
     private static T instance = null;
     private static readonly object Lock = new object();
+
     public static T Instance
     {
         get
@@ -25,5 +27,8 @@ public class Singleton<T> where T : class,new()
             }
         }
     }
-    public virtual void OnInitialized() { }
+
+    public virtual void OnInitialized()
+    {
+    }
 }

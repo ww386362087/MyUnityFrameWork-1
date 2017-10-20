@@ -100,6 +100,7 @@
     <Compile Include="Assets\GameEngine\MessageHandler\EventHandler.cs" />
     <Compile Include="Assets\GameEngine\Singleton\MonoSingleton.cs" />
     <Compile Include="Assets\GameEngine\Singleton\Singleton.cs" />
+    <Compile Include="Assets\GameEngine\TextureHelper\AsyncLoadTexture.cs" />
     <Compile Include="Assets\GameEngine\Timer\TimerMgr.cs" />
     <Compile Include="Assets\GameEngine\UI\AppBasePages.cs" />
     <Compile Include="Assets\GameEngine\UI\AppBootStrap.cs" />

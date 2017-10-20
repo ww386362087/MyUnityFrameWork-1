@@ -16,7 +16,6 @@ public class test : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Q))
         {
-            StartCoroutine(LoadImg("http://img5.duitang.com/uploads/item/201602/24/20160224195714_cMXRJ.jpeg"));
         }
         if (Input.GetKeyDown(KeyCode.W))
         {
@@ -124,23 +123,5 @@ public class test : MonoBehaviour
         responstream.Close();
         res.Close();
         Debug.Log(str);
-    }
-
-    public UITexture tttttt;
-    private WWW www;
-
-    public IEnumerator LoadImg(string url)
-    {
-        www = new WWW(url);
-        yield return www;
-        if (www.isDone)
-        {
-            Texture2D texture = www.texture;
-            byte[] bytes = texture.EncodeToPNG();
-            File.WriteAllBytes(Application.dataPath + "/Resources/" + "1.png", bytes);
-            tttttt.mainTexture = texture;
-            tttttt.MakePixelPerfect();
-        }
-        www.Dispose();
     }
 }
